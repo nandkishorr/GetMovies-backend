@@ -15,13 +15,11 @@ app.use(express.json());
 connectToDb()
 
 // Define your routes here
-// const Routes = require('./routes');
-// app.use('/', Routes);
+const Routes = require('./routes/getMovies.router');
+app.use('/', Routes);
 
 // If you only have one route, you can directly define it here instead of using a separate file
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
+
 
 // Start the server
 app.listen(port, () => {

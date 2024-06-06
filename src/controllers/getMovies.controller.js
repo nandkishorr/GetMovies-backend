@@ -1,10 +1,10 @@
 const { getMovies } = require("../services/getMovies.service");
 
-const getMoviesData= async (req, res) => {
+const getAllMoviesData= async (req, res) => {
     try {
-      const user = await getMovies();
+      const movie = await getMovies();
       // console.log(user);
-      res.send(user);
+      res.send(movie);
     } catch (error) {
       console.error('Error fetching user:', error);
       res.status(500).json({ error: 'Internal Server Error' });
@@ -13,6 +13,6 @@ const getMoviesData= async (req, res) => {
 
   
 module.exports = {
-    getMoviesData
+  getAllMoviesData
   };
   
